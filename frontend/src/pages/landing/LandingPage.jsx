@@ -128,16 +128,16 @@ const LandingPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-body">
+    <div className="min-h-screen bg-background text-text-primary font-body">
       {/* ─── NAVBAR ─── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl border-b border-border shadow-sm">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="w-9 h-9 bg-gradient-to-br from-primary-600 to-violet-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-600/30">
               <GraduationCap size={20} className="text-white" />
             </div>
             <div>
-              <span className="text-lg font-black font-heading text-gray-900">
+              <span className="text-lg font-black font-heading text-text-primary">
                 SmartPrep
               </span>
               <span className="hidden sm:block text-[10px] text-gray-400 leading-none">
@@ -197,7 +197,7 @@ const LandingPage = () => {
             AI-Powered Exam Preparation Platform
           </div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black font-heading text-gray-900 leading-tight mb-6">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black font-heading text-text-primary leading-tight mb-6">
             Study Smarter.
             <span className="relative inline-block ml-3">
               <span className="bg-gradient-to-r from-primary-600 via-violet-600 to-blue-600 bg-clip-text text-transparent">
@@ -254,18 +254,18 @@ const LandingPage = () => {
 
         {/* Hero Dashboard Preview */}
         <div className="max-w-5xl mx-auto mt-16 relative">
-          <div className="bg-white rounded-3xl border border-gray-200 shadow-2xl overflow-hidden">
+          <div className="bg-surface rounded-3xl border border-border shadow-2xl overflow-hidden">
             {/* Mock browser chrome */}
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-100 bg-gray-50/80">
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-surface-muted/80">
               <div className="w-3 h-3 rounded-full bg-red-400"></div>
               <div className="w-3 h-3 rounded-full bg-amber-400"></div>
               <div className="w-3 h-3 rounded-full bg-green-400"></div>
-              <div className="flex-1 mx-4 bg-white rounded-md px-3 py-1 text-xs text-gray-400 border border-gray-200 text-center">
+              <div className="flex-1 mx-4 bg-surface rounded-md px-3 py-1 text-xs text-text-muted border border-border text-center">
                 app.smartprep.study/dashboard
               </div>
             </div>
             {/* Dashboard mockup */}
-            <div className="flex h-[380px] bg-gray-50">
+            <div className="flex h-[380px] bg-surface-muted">
               {/* Sidebar mock */}
               <div className="w-48 bg-gray-900 p-4 flex flex-col gap-2 shrink-0">
                 <div className="flex items-center gap-2 mb-4">
@@ -310,7 +310,7 @@ const LandingPage = () => {
                   ].map(([v, l, c], i) => (
                     <div
                       key={i}
-                      className="bg-white rounded-xl p-3 border border-gray-100 shadow-sm"
+                      className="bg-surface rounded-xl p-3 border border-border shadow-sm"
                     >
                       <div
                         className={`text-lg font-bold font-mono text-${c}-600`}
@@ -322,8 +322,8 @@ const LandingPage = () => {
                   ))}
                 </div>
                 <div className="grid grid-cols-3 gap-3">
-                  <div className="col-span-2 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                    <div className="text-xs font-bold text-gray-500 mb-3">
+                  <div className="col-span-2 bg-surface rounded-xl p-4 border border-border shadow-sm">
+                    <div className="text-xs font-bold text-text-muted mb-3">
                       Today's Study Plan
                     </div>
                     {[
@@ -350,8 +350,8 @@ const LandingPage = () => {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm flex flex-col items-center justify-center">
-                    <div className="text-xs font-bold text-gray-500 mb-2">
+                  <div className="bg-surface rounded-xl p-4 border border-border shadow-sm flex flex-col items-center justify-center">
+                    <div className="text-xs font-bold text-text-muted mb-2">
                       Exam Readiness
                     </div>
                     <div className="relative w-20 h-20">
@@ -377,7 +377,7 @@ const LandingPage = () => {
                         />
                       </svg>
                       <div className="absolute inset-0 flex flex-col items-center justify-center">
-                        <span className="text-base font-black text-gray-900">
+                        <span className="text-base font-black text-text-primary">
                           75%
                         </span>
                         <span className="text-[8px] text-violet-600 font-bold">
@@ -391,24 +391,28 @@ const LandingPage = () => {
             </div>
           </div>
           {/* Floating badges */}
-          <div className="absolute -left-6 top-1/4 bg-white rounded-2xl shadow-xl border border-gray-100 p-3 flex items-center gap-3 hidden lg:flex">
+          <div className="absolute -left-6 top-1/4 bg-surface rounded-2xl shadow-xl border border-border p-3 flex items-center gap-3 hidden lg:flex">
             <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
               <TrendingUp size={20} className="text-green-600" />
             </div>
             <div>
-              <p className="text-xs text-gray-400 font-medium">
+              <p className="text-xs text-text-muted font-medium">
                 Score Improved
               </p>
-              <p className="text-sm font-black text-gray-900">+18% this week</p>
+              <p className="text-sm font-black text-text-primary">
+                +18% this week
+              </p>
             </div>
           </div>
-          <div className="absolute -right-6 bottom-1/4 bg-white rounded-2xl shadow-xl border border-gray-100 p-3 flex items-center gap-3 hidden lg:flex">
+          <div className="absolute -right-6 bottom-1/4 bg-surface rounded-2xl shadow-xl border border-border p-3 flex items-center gap-3 hidden lg:flex">
             <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center">
               <Trophy size={20} className="text-amber-600" />
             </div>
             <div>
-              <p className="text-xs text-gray-400 font-medium">Daily Streak</p>
-              <p className="text-sm font-black text-gray-900">🔥 23 Days</p>
+              <p className="text-xs text-text-muted font-medium">
+                Daily Streak
+              </p>
+              <p className="text-sm font-black text-text-primary">🔥 23 Days</p>
             </div>
           </div>
         </div>
@@ -419,7 +423,7 @@ const LandingPage = () => {
         <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s, i) => (
             <div key={i} className="text-center">
-              <p className="text-4xl font-black text-white mb-1 font-heading">
+              <p className="text-4xl font-black text-gray-50 mb-1 font-heading">
                 {s.value}
               </p>
               <p className="text-gray-400 text-sm font-semibold">{s.label}</p>
@@ -429,16 +433,16 @@ const LandingPage = () => {
       </section>
 
       {/* ─── FEATURES ─── */}
-      <section id="features" className="py-24 px-6 bg-white">
+      <section id="features" className="py-24 px-6 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-primary-600 text-sm font-bold uppercase tracking-widest">
               Features
             </span>
-            <h2 className="text-4xl font-black font-heading text-gray-900 mt-2 mb-4">
+            <h2 className="text-4xl font-black font-heading text-text-primary mt-2 mb-4">
               Everything You Need to Crack Your Exam
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto font-medium">
+            <p className="text-text-muted text-lg max-w-2xl mx-auto font-medium">
               From day-one planning to the night before your exam — SmartPrep
               has every tool you need.
             </p>
@@ -447,17 +451,17 @@ const LandingPage = () => {
             {features.map((f, i) => (
               <div
                 key={i}
-                className="group p-6 rounded-2xl border border-gray-100 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default"
+                className="group p-6 rounded-2xl border border-border bg-surface hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default"
               >
                 <div
                   className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${f.color} flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform`}
                 >
                   <f.icon size={22} className="text-white" />
                 </div>
-                <h3 className="text-lg font-bold font-heading text-gray-900 mb-2">
+                <h3 className="text-lg font-bold font-heading text-text-primary mb-2">
                   {f.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p className="text-text-muted text-sm leading-relaxed">
                   {f.desc}
                 </p>
               </div>
@@ -467,13 +471,13 @@ const LandingPage = () => {
       </section>
 
       {/* ─── HOW IT WORKS ─── */}
-      <section id="how-it-works" className="py-24 px-6 bg-gray-50">
+      <section id="how-it-works" className="py-24 px-6 bg-surface-muted">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-primary-600 text-sm font-bold uppercase tracking-widest">
               How It Works
             </span>
-            <h2 className="text-4xl font-black font-heading text-gray-900 mt-2">
+            <h2 className="text-4xl font-black font-heading text-text-primary mt-2">
               Get Started in Minutes
             </h2>
           </div>
@@ -488,15 +492,15 @@ const LandingPage = () => {
                 key={i}
                 className="relative flex flex-col items-center text-center p-6"
               >
-                <div className="w-20 h-20 rounded-full bg-white border-4 border-primary-100 flex flex-col items-center justify-center mb-4 shadow-lg z-10">
+                <div className="w-20 h-20 rounded-full bg-surface border-4 border-primary-100 flex flex-col items-center justify-center mb-4 shadow-lg z-10">
                   <span className="text-2xl font-black text-primary-600 font-heading">
                     {s.num}
                   </span>
                 </div>
-                <h3 className="text-base font-bold font-heading text-gray-900 mb-2">
+                <h3 className="text-base font-bold font-heading text-text-primary mb-2">
                   {s.title}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed font-medium">
+                <p className="text-sm text-text-muted leading-relaxed font-medium">
                   {s.desc}
                 </p>
               </div>
@@ -506,16 +510,16 @@ const LandingPage = () => {
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <section id="testimonials" className="py-24 px-6 bg-white">
+      <section id="testimonials" className="py-24 px-6 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-primary-600 text-sm font-bold uppercase tracking-widest">
               Success Stories
             </span>
-            <h2 className="text-4xl font-black font-heading text-gray-900 mt-2 mb-4">
+            <h2 className="text-4xl font-black font-heading text-text-primary mt-2 mb-4">
               Students Who Made It
             </h2>
-            <p className="text-gray-500 text-lg max-w-xl mx-auto font-medium">
+            <p className="text-text-muted text-lg max-w-xl mx-auto font-medium">
               Real results from students who trusted SmartPrep for their
               preparation journey.
             </p>
@@ -524,7 +528,7 @@ const LandingPage = () => {
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow"
+                className="bg-surface-muted rounded-2xl p-6 border border-border hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
@@ -535,7 +539,7 @@ const LandingPage = () => {
                     />
                   ))}
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed mb-5 font-medium italic">
+                <p className="text-text-primary text-sm leading-relaxed mb-5 font-medium italic">
                   "{t.text}"
                 </p>
                 <div className="flex items-center gap-3">
@@ -545,7 +549,9 @@ const LandingPage = () => {
                     {t.avatar}
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900 text-sm">{t.name}</p>
+                    <p className="font-bold text-text-primary text-sm">
+                      {t.name}
+                    </p>
                     <p className="text-xs text-primary-600 font-semibold">
                       {t.role}
                     </p>
@@ -558,17 +564,17 @@ const LandingPage = () => {
       </section>
 
       {/* ─── FINAL CTA ─── */}
-      <section className="py-24 px-6 bg-gradient-to-br from-gray-900 via-primary-950 to-violet-950 relative overflow-hidden">
+      <section className="py-24 px-6 bg-gradient-to-br from-gray-900 via-primary-900 to-violet-950 relative overflow-hidden">
         <div className="absolute inset-0 -z-0">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-20 w-64 h-64 bg-violet-600/20 rounded-full blur-3xl"></div>
         </div>
         <div className="max-w-3xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-sm font-bold px-4 py-2 rounded-full mb-8 backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 bg-surface-muted/30 border border-border text-gray-200 text-sm font-bold px-4 py-2 rounded-full mb-8 backdrop-blur-md">
             <Zap size={14} className="text-yellow-400" />
             Join 50,000+ students already preparing
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black font-heading text-white mb-6 leading-tight">
+          <h2 className="text-4xl sm:text-5xl font-black font-heading text-gray-50 mb-6 leading-tight">
             Your Dream Score is
             <br />
             One Plan Away
@@ -580,7 +586,7 @@ const LandingPage = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to={ctaLink}
-              className="flex items-center gap-2 bg-white text-primary-700 font-bold text-lg px-8 py-4 rounded-2xl shadow-2xl hover:bg-blue-50 transition-all hover:-translate-y-0.5"
+              className="flex items-center gap-2 bg-gray-50 text-primary-600 font-bold text-lg px-8 py-4 rounded-2xl shadow-2xl hover:bg-gray-100 transition-all hover:-translate-y-0.5"
             >
               Get Your Free Study Plan <ArrowRight size={20} />
             </Link>
