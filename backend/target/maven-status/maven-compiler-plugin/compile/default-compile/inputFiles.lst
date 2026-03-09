@@ -1,50 +1,50 @@
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\dto\AnalyticsResponse.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\model\TestResult.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\config\SecurityConfig.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\model\StudyPlan.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\dto\RegisterRequest.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\controller\AuthController.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\exception\UnauthorizedException.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\dto\GoogleAuthRequest.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\dto\TaskUpdateRequest.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\service\TestService.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\controller\PlannerController.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\controller\UserController.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\model\User.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\service\PlannerService.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\dto\TestSubmissionRequest.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\service\UserService.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\repository\TaskRepository.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\model\TestQuestion.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\repository\UserRepository.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\security\JwtFilter.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\repository\StudyPlanRepository.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\controller\AnalyticsController.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\model\Task.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\exception\GlobalExceptionHandler.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\security\JwtUtil.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\dto\UserResponse.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\controller\TaskController.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\dto\LoginRequest.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\service\AnalyticsService.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\model\Subject.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\config\CorsConfig.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\model\Exam.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\repository\SubjectRepository.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\repository\ExamRepository.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\security\AuthEntryPoint.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\service\AuthService.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\exception\ResourceNotFoundException.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\model\MockTest.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\service\TaskService.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\util\ReadinessCalculator.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\util\ScoreCalculator.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\repository\TopicRepository.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\controller\TestController.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\dto\ApiResponse.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\repository\TestResultRepository.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\dto\PlannerRequest.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\model\Topic.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\security\CustomUserDetailsService.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\SmartPrepApplication.java
-G:\SmartPrep Project\SmartPrep – Adaptive Study Planner and Exam Analytics Platform\backend\src\main\java\com\smartprep\repository\MockTestRepository.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\SmartPrepApplication.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\repository\TopicRepository.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\controller\UserController.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\model\TestResult.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\model\User.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\model\TestQuestion.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\repository\UserRepository.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\controller\PlannerController.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\dto\PlannerRequest.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\security\CustomUserDetailsService.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\controller\TestController.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\dto\ApiResponse.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\model\Topic.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\dto\GoogleAuthRequest.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\service\AuthService.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\controller\AnalyticsController.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\model\Subject.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\model\MockTest.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\repository\SubjectRepository.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\util\ScoreCalculator.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\service\UserService.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\repository\StudyPlanRepository.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\controller\AuthController.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\service\PlannerService.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\exception\UnauthorizedException.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\security\AuthEntryPoint.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\repository\TaskRepository.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\exception\ResourceNotFoundException.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\security\JwtUtil.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\service\AnalyticsService.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\controller\TaskController.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\dto\UserResponse.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\security\JwtFilter.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\dto\LoginRequest.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\service\TestService.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\dto\RegisterRequest.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\dto\AnalyticsResponse.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\model\Task.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\service\TaskService.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\repository\TestResultRepository.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\config\SecurityConfig.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\repository\MockTestRepository.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\dto\TestSubmissionRequest.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\dto\TaskUpdateRequest.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\repository\ExamRepository.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\exception\GlobalExceptionHandler.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\model\StudyPlan.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\model\Exam.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\util\ReadinessCalculator.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\config\CorsConfig.java

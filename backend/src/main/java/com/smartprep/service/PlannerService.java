@@ -152,7 +152,11 @@ public class PlannerService {
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
         StudyPlan plan = studyPlanRepository.findTopByUserIdOrderByCreatedAtDesc(user.getId())
-                .orElseThrow(() -> new ResourceNotFoundException("No study plan found. Generate one first."));
+                .orElse(null);
+
+        if (plan == null) {
+            return new ArrayList<>();
+        }
 
         LocalDate weekEnd = weekStart.plusDays(6);
         List<Task> tasks = taskRepository.findByStudyPlanIdAndScheduledDateBetween(plan.getId(), weekStart, weekEnd);
@@ -178,7 +182,11 @@ public class PlannerService {
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
         StudyPlan plan = studyPlanRepository.findTopByUserIdOrderByCreatedAtDesc(user.getId())
-                .orElseThrow(() -> new ResourceNotFoundException("No study plan found"));
+                .orElse(null);
+
+        if (plan == null) {
+            return new ArrayList<>();
+        }
 
         List<Task> tasks = taskRepository.findByStudyPlanIdAndScheduledDate(plan.getId(), date);
         return tasks.stream().map(this::mapTask).collect(Collectors.toList());

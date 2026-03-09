@@ -8,8 +8,10 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tasks")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Task {
 
@@ -31,9 +33,11 @@ public class Task {
     @Column(name = "duration_hours", precision = 4, scale = 1)
     private BigDecimal durationHours;
 
+    @Builder.Default
     @Column(length = 20)
     private String status = "pending"; // pending, completed, skipped
 
+    @Builder.Default
     @Column(name = "is_backlog")
     private Boolean isBacklog = false;
 

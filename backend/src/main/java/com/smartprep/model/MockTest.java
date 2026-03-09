@@ -6,8 +6,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "mock_tests")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class MockTest {
 
@@ -31,6 +33,7 @@ public class MockTest {
     @Column(name = "duration_minutes")
     private Integer durationMinutes;
 
+    @Builder.Default
     @Column(name = "is_locked")
     private Boolean isLocked = false;
 

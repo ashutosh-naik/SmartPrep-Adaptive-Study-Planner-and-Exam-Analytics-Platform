@@ -136,6 +136,14 @@ const TestAttempt = () => {
 
   useEffect(() => {
     const fetchTest = async () => {
+      if (id === "demo") {
+        const mock = MOCK_TESTS.default;
+        setTest(mock);
+        setTimeLeft(mock.durationMinutes * 60);
+        setIsDemo(true);
+        setLoading(false);
+        return;
+      }
       try {
         const res = await testService.getTest(id);
         if (res.data && res.data.questions?.length > 0) {
@@ -145,11 +153,7 @@ const TestAttempt = () => {
           throw new Error("No questions");
         }
       } catch {
-        // Fall back to mock data for demo
-        const mock = MOCK_TESTS.default;
-        setTest(mock);
-        setTimeLeft(mock.durationMinutes * 60);
-        setIsDemo(true);
+        toast.error("Failed to load the test");
       } finally {
         setLoading(false);
       }

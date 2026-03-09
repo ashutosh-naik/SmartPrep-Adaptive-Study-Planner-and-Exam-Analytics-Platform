@@ -8,8 +8,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class User {
 
@@ -38,12 +40,14 @@ public class User {
     @Column(name = "exam_date")
     private LocalDate examDate;
 
+    @Builder.Default
     @Column(name = "study_hours_per_day")
     private Integer studyHoursPerDay = 4;
 
     @Column(name = "preferred_study_time", length = 50)
     private String preferredStudyTime;
 
+    @Builder.Default
     @Column(name = "break_duration")
     private Integer breakDuration = 15;
 
