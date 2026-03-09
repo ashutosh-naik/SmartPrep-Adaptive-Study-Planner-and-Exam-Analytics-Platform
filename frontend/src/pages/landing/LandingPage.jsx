@@ -133,7 +133,10 @@ const LandingPage = () => {
       {/* ─── NAVBAR ─── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl border-b border-border shadow-sm">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
+          <Link
+            to="/"
+            className="flex items-center gap-2.5 hover:opacity-80 transition-opacity tracking-wide"
+          >
             <div className="w-9 h-9 bg-gradient-to-br from-primary-600 to-violet-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-600/30">
               <GraduationCap size={20} className="text-white" />
             </div>
@@ -141,11 +144,11 @@ const LandingPage = () => {
               <span className="text-lg font-black font-heading text-text-primary">
                 SmartPrep
               </span>
-              <span className="hidden sm:block text-[10px] text-gray-400 leading-none">
+              <span className="hidden sm:block text-[10px] text-text-muted leading-none font-medium mt-0.5">
                 Adaptive Study Platform
               </span>
             </div>
-          </div>
+          </Link>
           <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-text-muted">
             <a
               href="#features"

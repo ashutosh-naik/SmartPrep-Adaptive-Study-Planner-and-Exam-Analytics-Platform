@@ -48,19 +48,22 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex bg-background">
       {/* Left — Form */}
       <div className="flex-1 flex items-center justify-center px-8 py-12">
         <div className="w-full max-w-md">
           {/* Logo */}
-          <div className="flex items-center gap-3 mb-10">
-            <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center">
+          <Link
+            to="/"
+            className="flex items-center gap-3 mb-10 hover:opacity-80 transition-opacity tracking-wide"
+          >
+            <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-600/30">
               <GraduationCap size={22} className="text-white" />
             </div>
             <span className="font-heading font-bold text-xl text-text-primary">
               SmartPrep
             </span>
-          </div>
+          </Link>
 
           <h2 className="text-3xl font-bold text-text-primary font-heading mb-2">
             Welcome Back
