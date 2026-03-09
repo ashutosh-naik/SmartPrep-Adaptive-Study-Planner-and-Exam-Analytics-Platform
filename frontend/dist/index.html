@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SmartPrep - Adaptive Study Planner & Exam Analytics Platform. Study Smarter, Not Harder."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (() => {
+        const STORAGE_KEY = 'smartprep-theme-mode';
+        const validModes = new Set(['light', 'dark', 'system']);
+
+        try {
+          const stored = localStorage.getItem(STORAGE_KEY);
+          const mode = validModes.has(stored) ? stored : 'system';
+          const resolved =
+            mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : mode === 'system'
+                ? 'light'
+                : mode;
+          document.documentElement.setAttribute('data-theme-mode', mode);
+          document.documentElement.setAttribute('data-theme', resolved);
+        } catch {
+          document.documentElement.setAttribute('data-theme-mode', 'system');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+    <title>SmartPrep - Study Smarter, Not Harder</title>
+    <script type="module" crossorigin src="/assets/index-CsrY6xjd.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-vzvJ6T_4.css">
+  </head>
+  <body>
+    <div id="root">Loading SmartPrep...</div>
+    <noscript>SmartPrep requires JavaScript to run.</noscript>
+  </body>
+</html>
