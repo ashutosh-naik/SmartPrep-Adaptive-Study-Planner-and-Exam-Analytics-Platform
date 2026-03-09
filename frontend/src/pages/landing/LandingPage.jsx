@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import ThemeToggle from "../../components/ThemeToggle";
 import {
   Brain,
   Calendar,
@@ -145,30 +146,31 @@ const LandingPage = () => {
               </span>
             </div>
           </div>
-          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-500">
+          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-text-muted">
             <a
               href="#features"
-              className="hover:text-gray-900 transition-colors"
+              className="hover:text-text-primary transition-colors"
             >
               Features
             </a>
             <a
               href="#how-it-works"
-              className="hover:text-gray-900 transition-colors"
+              className="hover:text-text-primary transition-colors"
             >
               How It Works
             </a>
             <a
               href="#testimonials"
-              className="hover:text-gray-900 transition-colors"
+              className="hover:text-text-primary transition-colors"
             >
               Reviews
             </a>
           </nav>
           <div className="flex items-center gap-3">
+            <ThemeToggle compact={true} />
             <Link
               to="/login"
-              className="text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors px-3 py-2"
+              className="text-sm font-semibold text-text-muted hover:text-text-primary transition-colors px-3 py-2"
             >
               Sign In
             </Link>
