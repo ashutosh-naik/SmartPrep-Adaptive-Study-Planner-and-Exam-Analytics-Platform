@@ -21,9 +21,9 @@ import {
   Sparkles,
   GraduationCap,
   Bell,
-  FileText,
   RotateCcw,
 } from "lucide-react";
+import AnimatedPage from "../../components/AnimatedPage";
 
 const LandingPage = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
@@ -129,8 +129,9 @@ const LandingPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-text-primary font-body">
-      {/* ─── NAVBAR ─── */}
+    <AnimatedPage>
+      <div className="min-h-screen bg-background text-text-primary font-body">
+        {/* ─── NAVBAR ─── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl border-b border-border shadow-sm">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link
@@ -646,7 +647,8 @@ const LandingPage = () => {
           <p className="text-xs">© 2026 SmartPrep. All rights reserved.</p>
         </div>
       </footer>
-    </div>
+      </div>
+    </AnimatedPage>
   );
 };
 

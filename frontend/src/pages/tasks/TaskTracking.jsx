@@ -14,7 +14,9 @@ import {
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
 import ProgressBar from "../../components/ProgressBar";
-import Loader from "../../components/Loader";
+import AnimatedPage from "../../components/AnimatedPage";
+import Skeleton from "../../components/Skeleton";
+import EmptyState from "../../components/EmptyState";
 import { taskService } from "../../services/taskService";
 import { formatDuration } from "../../utils/calculationUtils";
 import { formatShortDate } from "../../utils/dateUtils";
@@ -135,7 +137,7 @@ const TaskTracking = () => {
   ];
 
   return (
-    <div>
+    <AnimatedPage>
       {/* New Task Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
@@ -305,7 +307,20 @@ const TaskTracking = () => {
           </div>
 
           {loading ? (
-            <Loader size="sm" />
+            <div className="space-y-4">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="flex gap-4 items-center">
+                  <Skeleton className="w-8 h-8 rounded-full" />
+                  <div className="flex-1">
+                    <Skeleton className="w-1/3 h-5 mb-2" />
+                    <Skeleton className="w-1/4 h-3" />
+                  </div>
+                  <Skeleton className="w-20 h-6 rounded-md" />
+                  <Skeleton className="w-16 h-4" />
+                  <Skeleton className="w-24 h-6 rounded-full" />
+                </div>
+              ))}
+            </div>
           ) : tasks.length > 0 ? (
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
@@ -398,16 +413,22 @@ const TaskTracking = () => {
               </table>
             </div>
           ) : (
-            <div className="text-center py-12">
-              <CheckCircle2 size={40} className="text-gray-300 mx-auto mb-3" />
-              <p className="text-text-muted text-sm">
-                No tasks found. Generate a study plan first!
-              </p>
+            <div className="py-8">
+              <EmptyState 
+                type="tasks" 
+                title="No tasks found"
+                description="Generate a study plan or add a task manually to start tracking your progress."
+                action={
+                  <button onClick={() => setShowModal(true)} className="btn-primary py-2.5 px-6">
+                    + Add Task
+                  </button>
+                }
+              />
             </div>
           )}
         </div>
       </div>
-    </div>
+    </AnimatedPage>
   );
 };
 

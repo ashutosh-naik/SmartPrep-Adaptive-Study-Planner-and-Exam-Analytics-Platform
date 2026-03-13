@@ -1,5 +1,6 @@
 C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\SmartPrepApplication.java
 C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\repository\TopicRepository.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\config\DataInitializer.java
 C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\controller\UserController.java
 C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\model\TestResult.java
 C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\model\User.java
@@ -39,7 +40,9 @@ C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analyt
 C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\service\TaskService.java
 C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\repository\TestResultRepository.java
 C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\config\SecurityConfig.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\config\RedisConfig.java
 C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\repository\MockTestRepository.java
+C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\repository\TestQuestionRepository.java
 C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\dto\TestSubmissionRequest.java
 C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\dto\TaskUpdateRequest.java
 C:\Users\naika\OneDrive\Desktop\SmartPrep-Adaptive-Study-Planner-and-Exam-Analytics-Platform\backend\src\main\java\com\smartprep\repository\ExamRepository.java

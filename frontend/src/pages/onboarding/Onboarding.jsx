@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { updateUser } from "../../store/authSlice";
 import { analyticsService } from "../../services/analyticsService";
+import { plannerService } from "../../services/plannerService";
 import {
   ChevronRight,
   ChevronLeft,
@@ -13,6 +14,7 @@ import {
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
+import AnimatedPage from "../../components/AnimatedPage";
 import toast from "react-hot-toast";
 
 const EXAM_TYPES = [
@@ -100,7 +102,20 @@ const Onboarding = () => {
         .updateProfile(payload)
         .catch(() => null);
       if (res?.data) dispatch(updateUser(res.data));
-      // Mark onboarding complete in localStorage
+
+      // Auto-generate study plan with selected subjects
+      if (selectedSubjects.length > 0) {
+        const planPayload = {
+          studyHoursPerDay: studyHours,
+          subjects: selectedSubjects.map((s) => ({
+            name: s,
+            difficulty: "Medium",
+            topics: [],
+          })),
+        };
+        await plannerService.generatePlan(planPayload).catch(() => null);
+      }
+
       localStorage.setItem("sp_onboarded", "true");
       toast.success("Welcome aboard! Your study plan is ready. 🚀", {
         duration: 5000,
@@ -122,7 +137,8 @@ const Onboarding = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-primary-50/20 to-violet-50/20 flex items-center justify-center px-4">
+    <AnimatedPage>
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-primary-50/20 to-violet-50/20 flex items-center justify-center px-4">
       {/* Background blobs */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl" />
@@ -379,7 +395,8 @@ const Onboarding = () => {
           </button>
         )}
       </div>
-    </div>
+      </div>
+    </AnimatedPage>
   );
 };
 

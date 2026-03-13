@@ -11,6 +11,7 @@ import {
   Flame,
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
+import AnimatedPage from "../../components/AnimatedPage";
 import { useSelector } from "react-redux";
 
 const MOCK_STUDENTS = [
@@ -155,7 +156,7 @@ const Leaderboard = () => {
   const rest = all.slice(3);
 
   return (
-    <div>
+    <AnimatedPage>
       <Navbar
         title="Leaderboard"
         subtitle="See how you rank among your peers this week"
@@ -313,7 +314,7 @@ const Leaderboard = () => {
           </p>
         </div>
       </div>
-    </div>
+    </AnimatedPage>
   );
 };
 

@@ -11,8 +11,9 @@ import {
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
 import ProgressBar from "../../components/ProgressBar";
-import Loader from "../../components/Loader";
 import EmptyState from "../../components/EmptyState";
+import AnimatedPage from "../../components/AnimatedPage";
+import Skeleton from "../../components/Skeleton";
 import { testService } from "../../services/testService";
 
 import {
@@ -98,7 +99,7 @@ const MockTests = () => {
   ];
 
   return (
-    <div>
+    <AnimatedPage>
       <Navbar
         title="Mock Tests"
         subtitle="Practice and improve your scores with timed assessments."
@@ -138,7 +139,22 @@ const MockTests = () => {
 
         {/* Test Cards */}
         {loading ? (
-          <Loader />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                <Skeleton className="w-full h-40" />
+                <div className="p-5">
+                  <div className="flex justify-between items-end mb-4">
+                    <div className="flex gap-2">
+                       <Skeleton className="w-16 h-6 rounded-md" />
+                       <Skeleton className="w-16 h-6 rounded-md" />
+                    </div>
+                  </div>
+                  <Skeleton className="w-full h-12 rounded-xl mt-6" />
+                </div>
+              </div>
+            ))}
+          </div>
         ) : filtered.length > 0 ? (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -290,7 +306,7 @@ const MockTests = () => {
           </div>
         </div>
       </div>
-    </div>
+    </AnimatedPage>
   );
 };
 

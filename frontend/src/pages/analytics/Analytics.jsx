@@ -12,6 +12,7 @@ import {
   Lightbulb,
   ChevronRight,
   CheckCircle2,
+  Printer,
 } from "lucide-react";
 import {
   LineChart,
@@ -31,7 +32,8 @@ import {
 } from "recharts";
 import Navbar from "../../components/Navbar";
 import ProgressBar from "../../components/ProgressBar";
-import Loader from "../../components/Loader";
+import AnimatedPage from "../../components/AnimatedPage";
+import Skeleton from "../../components/Skeleton";
 import { analyticsService } from "../../services/analyticsService";
 import toast from "react-hot-toast";
 
@@ -98,7 +100,47 @@ const Analytics = () => {
     fetchData();
   }, []);
 
-  if (loading) return <Loader text="Loading analytics..." />;
+  if (loading) {
+    return (
+      <AnimatedPage>
+        <Navbar
+          title="Analytics & Performance"
+          subtitle="Track your exam preparation progress"
+        />
+        <div className="p-8">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+            <div>
+              <Skeleton className="w-48 h-8 mb-2" />
+              <Skeleton className="w-64 h-4" />
+            </div>
+            <div className="flex gap-3">
+              <Skeleton className="w-32 h-10 rounded-xl" />
+              <Skeleton className="w-36 h-10 rounded-xl" />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="card">
+                <Skeleton className="w-20 h-4 mb-3" />
+                <Skeleton className="w-24 h-8 mb-4" />
+                <Skeleton className="w-full h-4" />
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+            <div className="card lg:col-span-3">
+              <Skeleton className="w-48 h-6 mb-6" />
+              <Skeleton className="w-full h-[280px]" />
+            </div>
+            <div className="card lg:col-span-2">
+              <Skeleton className="w-48 h-6 mb-6" />
+              <Skeleton className="w-full h-[280px] rounded-full" />
+            </div>
+          </div>
+        </div>
+      </AnimatedPage>
+    );
+  }
 
   const stats = [
     {
@@ -154,7 +196,18 @@ const Analytics = () => {
   const weakest = sortedSubjects[sortedSubjects.length - 1];
 
   return (
-    <div>
+    <AnimatedPage>
+      {/* Print-only CSS */}
+      <style>{`
+        @media print {
+          aside, nav, .no-print { display: none !important; }
+          main { margin-left: 0 !important; }
+          body { background: white !important; }
+          .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; }
+          .grid { display: block !important; }
+          .card { margin-bottom: 20px !important; }
+        }
+      `}</style>
       <Navbar
         title="Analytics & Performance"
         subtitle="Track your exam preparation progress"
@@ -197,6 +250,13 @@ const Analytics = () => {
                 </div>
               )}
             </div>
+            <button
+              onClick={() => window.print()}
+              className="btn-secondary py-2 px-4 rounded-xl text-sm font-bold flex items-center gap-2 no-print shadow-sm font-semibold border border-stroke bg-white hover:bg-gray-50 text-gray-700 transition"
+              title="Export as PDF"
+            >
+              <Printer size={16} /> Export PDF
+            </button>
             <button
               onClick={() => {
                 const rows = [
@@ -896,7 +956,7 @@ const Analytics = () => {
           </div>
         </div>
       </div>
-    </div>
+    </AnimatedPage>
   );
 };
 

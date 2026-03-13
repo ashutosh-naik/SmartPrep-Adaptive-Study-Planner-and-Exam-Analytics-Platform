@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import Loader from "../../components/Loader";
 import ProgressBar from "../../components/ProgressBar";
+import AnimatedPage from "../../components/AnimatedPage";
 import { testService } from "../../services/testService";
 
 const TestResult = () => {
@@ -128,7 +129,8 @@ const TestResult = () => {
   const displayQs = showAll ? questions : questions.slice(0, 5);
 
   return (
-    <div className="min-h-screen bg-background">
+    <AnimatedPage>
+      <div className="min-h-screen bg-background">
       <div className="max-w-3xl mx-auto p-6 animate-fade-in">
         {/* ── Score Card ── */}
         <div
@@ -404,8 +406,9 @@ const TestResult = () => {
             <RotateCcw size={16} /> Retake Test
           </button>
         </div>
+        </div>
       </div>
-    </div>
+    </AnimatedPage>
   );
 };
 

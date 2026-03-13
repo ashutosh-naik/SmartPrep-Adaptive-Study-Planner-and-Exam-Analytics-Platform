@@ -6,6 +6,8 @@ import com.smartprep.model.*;
 import com.smartprep.repository.*;
 import com.smartprep.util.ReadinessCalculator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -37,6 +39,7 @@ public class AnalyticsService {
     @Autowired
     private ReadinessCalculator readinessCalculator;
 
+    @Cacheable(value = "dashboard", key = "#email")
     public Map<String, Object> getDashboardData(String email) {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
@@ -110,6 +113,7 @@ public class AnalyticsService {
         return dashboard;
     }
 
+    @Cacheable(value = "performance", key = "#email")
     public AnalyticsResponse getPerformance(String email) {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
@@ -131,12 +135,15 @@ public class AnalyticsService {
             improvement = recentAvg - oldAvg;
         }
 
-        // Score trends (mock weekly aggregation)
+        // Score trends — group by ISO year-week (e.g. "2025-W12")
         List<AnalyticsResponse.ScoreTrend> trends = new ArrayList<>();
         Map<String, List<TestResult>> grouped = results.stream()
                 .collect(Collectors.groupingBy(r -> {
                     LocalDateTime at = r.getAttemptedAt();
-                    return "Week " + (at != null ? at.getDayOfYear() / 7 + 1 : 1);
+                    if (at == null) return "Week 1";
+                    int isoWeek = at.toLocalDate().get(java.time.temporal.IsoFields.WEEK_OF_WEEK_BASED_YEAR);
+                    int isoYear = at.toLocalDate().get(java.time.temporal.IsoFields.WEEK_BASED_YEAR);
+                    return isoYear + "-W" + String.format("%02d", isoWeek);
                 }));
         for (Map.Entry<String, List<TestResult>> entry : grouped.entrySet()) {
             double weekAvg = entry.getValue().stream()
@@ -145,6 +152,8 @@ public class AnalyticsService {
             trends.add(AnalyticsResponse.ScoreTrend.builder()
                     .week(entry.getKey()).score(Math.round(weekAvg * 100.0) / 100.0).build());
         }
+        // Sort by week label ascending
+        trends.sort(Comparator.comparing(AnalyticsResponse.ScoreTrend::getWeek));
 
         // Subject-wise scores
         List<AnalyticsResponse.SubjectScore> subjectScores = new ArrayList<>();
@@ -172,6 +181,7 @@ public class AnalyticsService {
                 .build();
     }
 
+    @Cacheable(value = "readiness", key = "#email")
     public Map<String, Object> getReadiness(String email) {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));

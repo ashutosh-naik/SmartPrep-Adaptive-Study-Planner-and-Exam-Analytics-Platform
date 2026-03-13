@@ -18,7 +18,9 @@ import {
 } from "lucide-react";
 
 import Navbar from "../../components/Navbar";
-import Loader from "../../components/Loader";
+import AnimatedPage from "../../components/AnimatedPage";
+import Skeleton from "../../components/Skeleton";
+import EmptyState from "../../components/EmptyState";
 import { plannerService } from "../../services/plannerService";
 import { taskService } from "../../services/taskService";
 import {
@@ -248,7 +250,7 @@ const StudyPlanner = () => {
   };
 
   return (
-    <div>
+    <AnimatedPage>
       {showPomodoro && (
         <PomodoroTimer
           taskName={pomodoroTask}
@@ -670,7 +672,23 @@ const StudyPlanner = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {loading ? (
-                <Loader size="sm" />
+                <>
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="flex flex-col sm:flex-row gap-5 p-5 bg-white rounded-2xl border border-gray-100">
+                      <div className="w-full sm:w-1/3 aspect-video sm:aspect-square bg-gray-100 rounded-xl overflow-hidden shrink-0">
+                        <Skeleton className="w-full h-full" />
+                      </div>
+                      <div className="flex-1 flex flex-col justify-between items-start">
+                        <div className="w-full">
+                          <Skeleton className="w-20 h-4 mb-2 rounded-full" />
+                          <Skeleton className="w-48 h-6 mb-2" />
+                          <Skeleton className="w-32 h-4 mb-4" />
+                        </div>
+                        <Skeleton className="w-full h-10 rounded-lg" />
+                      </div>
+                    </div>
+                  ))}
+                </>
               ) : dailyTasks.length > 0 ? (
                 dailyTasks.map((task) => {
                   const isCompleted = task.status === "completed";
@@ -776,7 +794,7 @@ const StudyPlanner = () => {
           </>
         )}
       </div>
-    </div>
+    </AnimatedPage>
   );
 };
 

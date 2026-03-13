@@ -12,6 +12,7 @@ import {
   Layers,
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
+import AnimatedPage from "../../components/AnimatedPage";
 import toast from "react-hot-toast";
 
 // LocalStorage key
@@ -225,7 +226,7 @@ const SubjectManager = () => {
     totalTopics > 0 ? Math.round((doneTopics / totalTopics) * 100) : 0;
 
   return (
-    <div>
+    <AnimatedPage>
       <Navbar
         title="Subject & Topic Manager"
         subtitle="Organize your study curriculum"
@@ -559,7 +560,7 @@ const SubjectManager = () => {
           })}
         </div>
       </div>
-    </div>
+    </AnimatedPage>
   );
 };
 

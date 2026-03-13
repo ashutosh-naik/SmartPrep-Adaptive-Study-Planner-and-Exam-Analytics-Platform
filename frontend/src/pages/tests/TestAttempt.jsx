@@ -10,7 +10,8 @@ import {
   Flag,
   X,
 } from "lucide-react";
-import Loader from "../../components/Loader";
+import AnimatedPage from "../../components/AnimatedPage";
+import Skeleton from "../../components/Skeleton";
 import { testService } from "../../services/testService";
 import toast from "react-hot-toast";
 
@@ -178,6 +179,17 @@ const TestAttempt = () => {
     return () => clearInterval(timerRef.current);
   }, [test]);
 
+  // ── Navigation guard — warn on accidental tab close / navigation ──
+  useEffect(() => {
+    if (!test) return;
+    const handleBeforeUnload = (e) => {
+      e.preventDefault();
+      e.returnValue = "Your test progress will be lost. Are you sure you want to leave?";
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, [test]);
+
   const handleSubmit = useCallback(async () => {
     clearInterval(timerRef.current);
     if (isDemo) {
@@ -223,7 +235,23 @@ const TestAttempt = () => {
     }
   }, [answers, id, isDemo, navigate, test, timeLeft]);
 
-  if (loading) return <Loader text="Loading test..." />;
+  if (loading)
+    return (
+      <div className="min-h-screen bg-background p-6 max-w-5xl mx-auto flex gap-6 mt-16">
+        <div className="flex-1 space-y-4">
+          <Skeleton className="w-1/4 h-6 mb-8" />
+          <Skeleton className="w-full h-8 mb-6" />
+          <div className="space-y-3">
+            {[1, 2, 3, 4].map((i) => (
+              <Skeleton key={i} className="w-full h-16 rounded-2xl" />
+            ))}
+          </div>
+        </div>
+        <div className="w-56 hidden lg:block">
+          <Skeleton className="w-full h-64 rounded-xl" />
+        </div>
+      </div>
+    );
   if (!test) return null;
 
   const questions = test.questions || [];
@@ -242,8 +270,9 @@ const TestAttempt = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* ── Top Bar ── */}
+    <AnimatedPage>
+      <div className="min-h-screen bg-background">
+        {/* ── Top Bar ── */}
       <div className="bg-surface border-b border-border px-6 py-3 flex items-center justify-between sticky top-0 z-20 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 bg-gradient-to-br from-primary-600 to-violet-600 rounded-xl flex items-center justify-center">
@@ -498,7 +527,8 @@ const TestAttempt = () => {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </AnimatedPage>
   );
 };
 

@@ -16,6 +16,7 @@ import {
   MapPin,
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
+import AnimatedPage from "../../components/AnimatedPage";
 import { analyticsService } from "../../services/analyticsService";
 import {
   STUDY_TIMES,
@@ -79,12 +80,6 @@ const Settings = () => {
       label: "Dark",
       description: "Low-glare for long sessions",
       icon: Moon,
-    },
-    {
-      value: "system",
-      label: "System",
-      description: "Follow your device preference",
-      icon: Monitor,
     },
   ];
 
@@ -188,7 +183,7 @@ const Settings = () => {
   };
 
   return (
-    <div>
+    <AnimatedPage>
       <Navbar
         title="Settings"
         subtitle="Manage your profile, study preferences, and notifications"
@@ -216,7 +211,7 @@ const Settings = () => {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {themeOptions.map((option) => (
               <button
                 type="button"
@@ -225,7 +220,7 @@ const Settings = () => {
                 className={`text-left p-4 rounded-xl border-2 transition-all ${
                   themeMode === option.value
                     ? "border-primary-600 bg-primary-50"
-                    : "border-gray-100 bg-white hover:border-primary-200"
+                    : "border-border bg-surface hover:border-primary-200"
                 }`}
               >
                 <div className="flex items-center gap-2 mb-1">
@@ -234,14 +229,14 @@ const Settings = () => {
                     className={
                       themeMode === option.value
                         ? "text-primary-600"
-                        : "text-gray-500"
+                        : "text-text-muted"
                     }
                   />
                   <p className="font-bold text-sm text-text-primary">
                     {option.label}
                   </p>
                 </div>
-                <p className="text-xs text-gray-500">{option.description}</p>
+                <p className="text-xs text-text-muted">{option.description}</p>
               </button>
             ))}
           </div>
@@ -362,7 +357,7 @@ const Settings = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
-              <label className="text-sm font-bold text-gray-700 mb-1.5 block">
+              <label className="text-sm font-bold text-text-primary mb-1.5 block">
                 Full Name
               </label>
               <input
@@ -374,17 +369,17 @@ const Settings = () => {
               />
             </div>
             <div>
-              <label className="text-sm font-bold text-gray-700 mb-1.5 block">
+              <label className="text-sm font-bold text-text-primary mb-1.5 block">
                 Email
               </label>
               <input
                 value={profile.email}
                 disabled
-                className="input-field bg-gray-50 cursor-not-allowed text-gray-500"
+                className="input-field bg-surface-muted cursor-not-allowed text-text-muted opacity-60"
               />
             </div>
             <div>
-              <label className="text-sm font-bold text-gray-700 mb-1.5 block">
+              <label className="text-sm font-bold text-text-primary mb-1.5 block">
                 Course
               </label>
               <input
@@ -397,7 +392,7 @@ const Settings = () => {
               />
             </div>
             <div>
-              <label className="text-sm font-bold text-gray-700 mb-1.5 block">
+              <label className="text-sm font-bold text-text-primary mb-1.5 block">
                 Year
               </label>
               <input
@@ -454,7 +449,7 @@ const Settings = () => {
               </div>
             </div>
             <div>
-              <label className="text-sm font-bold text-gray-700 mb-1.5 block">
+              <label className="text-sm font-bold text-text-primary mb-1.5 block">
                 Preferred Time
               </label>
               <select
@@ -473,7 +468,7 @@ const Settings = () => {
               </select>
             </div>
             <div>
-              <label className="text-sm font-bold text-gray-700 mb-1.5 block">
+              <label className="text-sm font-bold text-text-primary mb-1.5 block">
                 Break Duration
               </label>
               <select
@@ -508,7 +503,7 @@ const Settings = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
-              <label className="text-sm font-bold text-gray-700 mb-1.5 block">
+              <label className="text-sm font-bold text-text-primary mb-1.5 block">
                 Exam Date
               </label>
               <input
@@ -521,7 +516,7 @@ const Settings = () => {
               />
             </div>
             <div>
-              <label className="text-sm font-bold text-gray-700 mb-1.5 block">
+              <label className="text-sm font-bold text-text-primary mb-1.5 block">
                 Exam Type
               </label>
               <select
@@ -551,7 +546,7 @@ const Settings = () => {
                   Subject Difficulty Mapping
                 </h3>
               </div>
-              <p className="text-sm text-gray-500 ml-11">
+              <p className="text-sm text-text-muted ml-11">
                 Adjust these levels to change how tasks are prioritized.
               </p>
             </div>
@@ -577,15 +572,15 @@ const Settings = () => {
               {subjects.map((s, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-4 p-4 rounded-xl border border-gray-100 bg-white hover:border-gray-200 transition-colors shadow-sm"
+                  className="flex items-center gap-4 p-4 rounded-xl border border-border bg-surface hover:border-border transition-colors shadow-sm"
                 >
-                  <span className="flex-1 font-bold text-gray-800">
+                  <span className="flex-1 font-bold text-text-primary">
                     {s.name}
                   </span>
                   <select
                     value={s.difficulty}
                     onChange={(e) => updateDifficulty(i, e.target.value)}
-                    className="text-sm border border-gray-200 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-primary-500 font-semibold bg-gray-50"
+                    className="text-sm border border-border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-primary-500 font-semibold bg-surface-muted text-text-primary"
                   >
                     {DIFFICULTY_LEVELS.map((d) => (
                       <option key={d} value={d}>
@@ -603,7 +598,7 @@ const Settings = () => {
               ))}
             </div>
           ) : (
-            <p className="text-gray-400 text-sm mt-6 p-4 border border-dashed border-gray-200 rounded-xl text-center bg-gray-50">
+            <p className="text-text-muted text-sm mt-6 p-4 border border-dashed border-border rounded-xl text-center bg-surface-muted">
               No subjects added yet. Add your curriculum subjects above.
             </p>
           )}
@@ -635,7 +630,7 @@ const Settings = () => {
           </div>
           <form onSubmit={handleChangePw} className="space-y-4 max-w-sm">
             <div>
-              <label className="text-sm font-bold text-gray-700 mb-1.5 block">
+              <label className="text-sm font-bold text-text-primary mb-1.5 block">
                 Current Password
               </label>
               <div className="relative">
@@ -660,7 +655,7 @@ const Settings = () => {
               </div>
             </div>
             <div>
-              <label className="text-sm font-bold text-gray-700 mb-1.5 block">
+              <label className="text-sm font-bold text-text-primary mb-1.5 block">
                 New Password
               </label>
               <div className="relative">
@@ -697,7 +692,7 @@ const Settings = () => {
               )}
             </div>
             <div>
-              <label className="text-sm font-bold text-gray-700 mb-1.5 block">
+              <label className="text-sm font-bold text-text-primary mb-1.5 block">
                 Confirm New Password
               </label>
               <input
@@ -788,11 +783,11 @@ const Settings = () => {
             ].map(([key, label, desc]) => (
               <div
                 key={key}
-                className="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:border-primary-100 hover:bg-primary-50/30 transition-colors bg-white"
+                className="flex items-center justify-between p-4 rounded-xl border border-border hover:border-primary-100 hover:bg-primary-50/30 transition-colors bg-surface"
               >
                 <div>
-                  <p className="font-bold text-gray-800 mb-0.5">{label}</p>
-                  <p className="text-xs text-gray-500">{desc}</p>
+                  <p className="font-bold text-text-primary mb-0.5">{label}</p>
+                  <p className="text-xs text-text-muted">{desc}</p>
                 </div>
                 <div className="flex items-center gap-4">
                   <span
@@ -829,7 +824,7 @@ const Settings = () => {
           </button>
         </div>
       </div>
-    </div>
+    </AnimatedPage>
   );
 };
 

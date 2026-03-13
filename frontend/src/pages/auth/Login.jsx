@@ -5,6 +5,7 @@ import { Eye, EyeOff, GraduationCap, Mail, Lock } from "lucide-react";
 import { GoogleLogin } from "@react-oauth/google";
 import { authService } from "../../services/authService";
 import { loginStart, loginSuccess, loginFailure } from "../../store/authSlice";
+import AnimatedPage from "../../components/AnimatedPage";
 import toast from "react-hot-toast";
 
 const Login = () => {
@@ -48,7 +49,8 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex bg-background">
+    <AnimatedPage>
+      <div className="min-h-screen flex bg-background">
       {/* Left — Form */}
       <div className="flex-1 flex items-center justify-center px-8 py-12">
         <div className="w-full max-w-md">
@@ -256,8 +258,9 @@ const Login = () => {
             backgroundSize: "24px 24px",
           }}
         ></div>
+        </div>
       </div>
-    </div>
+    </AnimatedPage>
   );
 };
 

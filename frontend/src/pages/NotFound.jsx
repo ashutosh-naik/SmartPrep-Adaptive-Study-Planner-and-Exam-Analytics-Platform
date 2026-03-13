@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { Home, ArrowLeft, BookOpen, GraduationCap } from "lucide-react";
+import AnimatedPage from "../components/AnimatedPage";
 
 const NotFound = () => {
   return (
+    <AnimatedPage>
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-primary-50/30 to-violet-50/30 flex items-center justify-center px-6">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -67,6 +69,7 @@ const NotFound = () => {
         </div>
       </div>
     </div>
+    </AnimatedPage>
   );
 };
 

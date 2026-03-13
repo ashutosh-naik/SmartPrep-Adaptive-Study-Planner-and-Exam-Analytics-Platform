@@ -1,3 +1,13 @@
+import { 
+  ClipboardList, 
+  CalendarX2, 
+  FileQuestion, 
+  BarChart4, 
+  BookX, 
+  SearchX, 
+  BellRing
+} from "lucide-react";
+
 /**
  * EmptyState — reusable empty state component for all pages
  * Usage: <EmptyState type="tasks" onAction={() => ...} />
@@ -5,57 +15,64 @@
 
 const STATES = {
   tasks: {
-    emoji: "📋",
+    icon: ClipboardList,
     title: "No tasks yet",
     subtitle: "Add your first task to start tracking your study progress",
     actionLabel: "+ Add Task",
     bg: "from-blue-50 to-indigo-50",
+    iconColor: "text-blue-500",
   },
   planner: {
-    emoji: "📅",
+    icon: CalendarX2,
     title: "Nothing scheduled today",
     subtitle:
       "Your study schedule is empty for this day. Add tasks in the planner to fill it up.",
     actionLabel: "+ Create Plan",
     bg: "from-violet-50 to-purple-50",
+    iconColor: "text-violet-500",
   },
   tests: {
-    emoji: "📝",
+    icon: FileQuestion,
     title: "No tests available",
     subtitle:
       "No mock tests are available yet. Ask your instructor or check back later.",
     actionLabel: null,
     bg: "from-amber-50 to-orange-50",
+    iconColor: "text-amber-500",
   },
   analytics: {
-    emoji: "📊",
+    icon: BarChart4,
     title: "No analytics data yet",
     subtitle:
       "Complete at least one mock test to generate your performance analytics.",
     actionLabel: "Take a Test",
     bg: "from-green-50 to-emerald-50",
+    iconColor: "text-green-500",
   },
   subjects: {
-    emoji: "📚",
+    icon: BookX,
     title: "No subjects added",
     subtitle:
       "Add your exam subjects to organize your study plan and track topic progress.",
     actionLabel: "+ Add Subject",
     bg: "from-rose-50 to-pink-50",
+    iconColor: "text-rose-500",
   },
   search: {
-    emoji: "🔍",
+    icon: SearchX,
     title: "No results found",
     subtitle: "Try a different search term or browse the categories.",
     actionLabel: null,
     bg: "from-gray-50 to-slate-50",
+    iconColor: "text-gray-500",
   },
   notifications: {
-    emoji: "🔔",
+    icon: BellRing,
     title: "All caught up!",
     subtitle: "You have no new notifications right now.",
     actionLabel: null,
     bg: "from-blue-50 to-sky-50",
+    iconColor: "text-blue-500",
   },
 };
 
@@ -64,12 +81,13 @@ const EmptyState = ({
   onAction,
   title,
   subtitle,
-  emoji,
+  icon,
   actionLabel,
   compact = false,
 }) => {
   const preset = STATES[type] || STATES.tasks;
-  const displayEmoji = emoji || preset.emoji;
+  const displayIcon = icon || preset.icon;
+  const IconComponent = displayIcon;
   const displayTitle = title || preset.title;
   const displaySubtitle = subtitle || preset.subtitle;
   const displayAction =
@@ -78,8 +96,10 @@ const EmptyState = ({
 
   if (compact) {
     return (
-      <div className="flex flex-col items-center justify-center py-8 text-center">
-        <div className="text-4xl mb-3">{displayEmoji}</div>
+      <div className="flex flex-col items-center justify-center py-8 text-center animate-fade-in">
+        <div className={`mb-4 w-12 h-12 rounded-full flex items-center justify-center bg-white border border-border shadow-sm ${preset.iconColor}`}>
+          <IconComponent size={24} strokeWidth={1.5} />
+        </div>
         <p className="font-semibold text-text-primary mb-1">{displayTitle}</p>
         <p className="text-sm text-text-muted mb-4 max-w-xs">
           {displaySubtitle}
@@ -95,14 +115,16 @@ const EmptyState = ({
 
   return (
     <div
-      className={`w-full rounded-2xl bg-gradient-to-br ${bg} border border-white/60 shadow-sm p-10 flex flex-col items-center justify-center text-center`}
+      className={`w-full rounded-3xl bg-gradient-to-br ${bg} border border-border/50 shadow-sm p-12 flex flex-col items-center justify-center text-center animate-fade-in border-dashed`}
     >
       {/* Floating illustration */}
-      <div className="relative mb-6">
-        <div className="w-24 h-24 rounded-3xl bg-white shadow-lg flex items-center justify-center text-5xl animate-bounce-slow">
-          {displayEmoji}
+      <div className="relative mb-8">
+        <div className={`w-28 h-28 rounded-full bg-white shadow-xl flex items-center justify-center animate-bounce-slow border-4 border-white ${preset.iconColor}`}>
+          <IconComponent size={48} strokeWidth={1.5} />
         </div>
-        <div className="absolute -top-1 -right-1 w-6 h-6 bg-white rounded-full shadow flex items-center justify-center text-xs">
+        {/* Pulsing rings */}
+        <div className={`absolute inset-0 rounded-full border-2 ${preset.iconColor} opacity-20 animate-ping`} style={{ animationDuration: '3s' }} />
+        <div className="absolute -top-1 -right-1 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center text-[10px] transform rotate-12">
           ✨
         </div>
       </div>

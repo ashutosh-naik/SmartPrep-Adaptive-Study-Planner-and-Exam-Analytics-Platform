@@ -9,9 +9,11 @@ import {
   TrendingUp,
   Clock,
   BookOpen,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { getTimeOfDay } from "../utils/dateUtils";
-import ThemeToggle from "./ThemeToggle";
+import { useTheme } from "../context/ThemeContext";
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -101,6 +103,7 @@ const SEARCH_ITEMS = [
 
 const Navbar = ({ title, subtitle }) => {
   const { user } = useSelector((state) => state.auth);
+  const { themeMode, setThemeMode } = useTheme();
   const navigate = useNavigate();
   const greeting = `Good ${getTimeOfDay()}, ${user?.name || "Student"}! 👋`;
   const avatarUrl = localStorage.getItem("sp_avatar");
@@ -224,8 +227,15 @@ const Navbar = ({ title, subtitle }) => {
               )}
           </div>
 
-          {/* Theme Toggle */}
-          <ThemeToggle />
+          {/* Theme Toggle Button */}
+          <button
+            onClick={() => setThemeMode(themeMode === "dark" ? "light" : "dark")}
+            className="p-2.5 hover:bg-surface-muted rounded-xl transition-colors border border-transparent hover:border-border text-text-muted hover:text-primary-600"
+            aria-label="Toggle theme"
+            title={`Switch to ${themeMode === "dark" ? "Light" : "Dark"} Mode`}
+          >
+            {themeMode === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
 
           {/* Notifications */}
           <div className="relative" ref={notifRef}>

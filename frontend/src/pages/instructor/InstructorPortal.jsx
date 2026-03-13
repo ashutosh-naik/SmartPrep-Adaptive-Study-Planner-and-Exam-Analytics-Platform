@@ -14,6 +14,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
+import AnimatedPage from "../../components/AnimatedPage";
 import toast from "react-hot-toast";
 
 const MOCK_STUDENTS = [
@@ -158,7 +159,7 @@ const InstructorPortal = () => {
   ];
 
   return (
-    <div>
+    <AnimatedPage>
       <Navbar
         title="Instructor Portal"
         subtitle="Manage students, upload tests, and track class performance"
@@ -460,7 +461,7 @@ const InstructorPortal = () => {
           </div>
         )}
       </div>
-    </div>
+    </AnimatedPage>
   );
 };
 
